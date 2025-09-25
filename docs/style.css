@@ -155,3 +155,21 @@ body {
     margin: 12px 0 0;
   }
 }
+
+/* Hamburger menü varsayılan olarak gizli */
+#menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Küçük ekranlarda görünür */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none; /* Menü gizleniyor */
+  }
+  #menu-icon {
+    display: block; /* Hamburger görünüyor */
+  }
+}
