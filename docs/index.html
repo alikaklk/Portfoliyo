@@ -1,53 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ali's Portfolio</title>
 
-    <!-- Boxicons CDN -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <!-- Boxicons CDN -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-    <title>Ali's Portfolio</title>
+  <!-- Favicon (ICO only) -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 </head>
 <body>
-    <div class="container">
-        <div class="navbar-container">
-            <img src="images/webdevlogo.svg" class="navbar-logo-img">
-            <div class="navbar-menu">
-                <ul>
-                    <li><a class="button" href="index.html"><i class='bx bx-home'></i></a></li>
-                    <li><a class="button" href="about.html">About</a></li>
-                    <li><a class="button" href="skills.html">Skills</a></li>
-                    <li><a class="button" href="projects.html">Projects</a></li>
-                    <li><a class="button" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
+  <div class="container">
+    <div class="navbar-container">
+      <img src="images/webdevlogo.svg" class="navbar-logo-img" alt="Logo">
 
-            <!-- Burger button with Boxicons -->
-             <div id="menu-icon">
-                <i class='bx bx-menu'></i>
-            </div>
-        </div>
+      <div class="navbar-menu">
+        <ul>
+          <li><a class="button" href="index.html"><i class='bx bx-home'></i></a></li>
+          <li><a class="button" href="about.html">About</a></li>
+          <li><a class="button" href="skills.html">Skills</a></li>
+          <li><a class="button" href="projects.html">Projects</a></li>
+          <li><a class="button" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
 
-        <div class="mainpage-container">
-            <img src="images/myPhoto.png" class="my-photo">
-            <p class="text-1">This <br> Is <br> Me!</p>
-            <p class="text-2">Welcome <br>To <br>My <br> Website!</p>
-        </div>
+      <!-- Burger (mobile) -->
+      <div id="menu-icon" aria-label="Menu" aria-expanded="false" aria-controls="nav">
+        <i class='bx bx-menu' aria-hidden="true"></i>
+      </div>
     </div>
 
- <script>
-  const burger = document.getElementById('menu-icon');   // değiştirildi
-  const navMenu = document.querySelector('.navbar-menu');
-  burger.addEventListener('click', () => {
-    navMenu.classList.toggle('open');
-    const i = burger.querySelector('i');
-    i.classList.toggle('bx-menu');
-    i.classList.toggle('bx-x');
+    <div class="mainpage-container">
+      <img src="images/myPhoto.png" class="my-photo" alt="Ali">
+      <p class="text-1">This <br> Is <br> Me!</p>
+      <p class="text-2">Welcome <br>To <br>My <br> Website!</p>
+    </div>
+  </div>
+
+  <script>
+    const burger = document.getElementById('menu-icon');
+    const navMenu = document.querySelector('.navbar-menu');
+
+    burger.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(isOpen));
+      const icon = burger.querySelector('i');
+      icon.classList.toggle('bx-menu', !isOpen);
+      icon.classList.toggle('bx-x', isOpen);
     });
-    </script>
+  </script>
 </body>
 </html>
