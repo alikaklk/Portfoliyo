@@ -6,11 +6,7 @@
   <title>Ali's Portfolio</title>
 
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Boxicons CDN -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
-  <!-- Favicon (ICO only) -->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 </head>
 <body>
@@ -44,7 +40,6 @@
   <script>
     const burger = document.getElementById('menu-icon');
     const navMenu = document.querySelector('.navbar-menu');
-
     burger.addEventListener('click', () => {
       const isOpen = navMenu.classList.toggle('open');
       burger.setAttribute('aria-expanded', String(isOpen));
