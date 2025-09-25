@@ -128,48 +128,15 @@ body {
   100% { transform: translateY(1.7%); }
 }
 /* Sadece mobil ekranlar için */
-@media (max-width: 767px) {
-  .mainpage-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 24px 16px;
-    min-height: calc(100vh - 64px);
-  }
-
-  .mainpage-container img {
-    margin-top: 0;
-    width: 80%;
-    max-width: 280px;
-    height: auto;
-  }
-
-  .text-1,
-  .text-2 {
-    position: static;   /* absolute yerine normal akış */
-    transform: none;
-    mix-blend-mode: normal;
-    font-size: clamp(24px, 7vw, 36px);
-    text-align: center;
-    margin: 12px 0 0;
-  }
+/* Mobil: ikon görünür, menü gizli */
+@media (max-width:767px){
+  .navbar-menu{display:none}
+  .navbar-menu.open{display:block}
+  #menu-icon{display:block}
 }
 
-/* Hamburger menü varsayılan olarak gizli */
-#menu-icon {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: white;
-}
-
-/* Küçük ekranlarda görünür */
-@media (max-width: 768px) {
-  .navbar-menu {
-    display: none; /* Menü gizleniyor */
-  }
-  #menu-icon {
-    display: block; /* Hamburger görünüyor */
-  }
+/* Masaüstü: ikon gizli, menü görünür */
+@media (min-width:768px){
+  #menu-icon{display:none !important;}
+  .navbar-menu{display:block}
 }

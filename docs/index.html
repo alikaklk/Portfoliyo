@@ -39,18 +39,15 @@
         </div>
     </div>
 
-    <script>
-        const burger = document.querySelector('.burger');
-        const navMenu = document.querySelector('.navbar-menu');
-        burger.addEventListener('click', () => {
-            const open = burger.getAttribute('aria-expanded') === 'true';
-            burger.setAttribute('aria-expanded', String(!open));
-            navMenu.classList.toggle('open', !open);
-
-            // toggle burger icon
-            burger.querySelector('i').classList.toggle('bx-menu');
-            burger.querySelector('i').classList.toggle('bx-x');
-        });
+ <script>
+  const burger = document.getElementById('menu-icon');   // değiştirildi
+  const navMenu = document.querySelector('.navbar-menu');
+  burger.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+    const i = burger.querySelector('i');
+    i.classList.toggle('bx-menu');
+    i.classList.toggle('bx-x');
+    });
     </script>
 </body>
 </html>
