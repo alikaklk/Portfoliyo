@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <!-- Google Material Symbols & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet" />
+
+    <!-- Boxicons CDN -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-
 
     <title>Ali's Portfolio</title>
 </head>
@@ -16,27 +16,41 @@
     <div class="container">
         <div class="navbar-container">
             <img src="images/webdevlogo.svg" class="navbar-logo-img">
-           <div class="navbar-menu">
+            <div class="navbar-menu">
                 <ul>
-                    <li><a class="button" href="index.html"><span class="material-symbols-outlined">home</span></a></li>
+                    <li><a class="button" href="index.html"><i class='bx bx-home'></i></a></li>
                     <li><a class="button" href="about.html">About</a></li>
                     <li><a class="button" href="skills.html">Skills</a></li>
                     <li><a class="button" href="projects.html">Projects</a></li>
-                    <li><a class="button" href="contact.html" >Contact</a></li>
+                    <li><a class="button" href="contact.html">Contact</a></li>
                 </ul>
             </div>
 
+            <!-- Burger button with Boxicons -->
+            <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+                <i class='bx bx-menu'></i>
+            </button>
         </div>
+
         <div class="mainpage-container">
-            
             <img src="images/myPhoto.png" class="my-photo">
             <p class="text-1">This <br> Is <br> Me!</p>
             <p class="text-2">Welcome <br>To <br>My <br> Website!</p>
         </div>
     </div>
 
+    <script>
+        const burger = document.querySelector('.burger');
+        const navMenu = document.querySelector('.navbar-menu');
+        burger.addEventListener('click', () => {
+            const open = burger.getAttribute('aria-expanded') === 'true';
+            burger.setAttribute('aria-expanded', String(!open));
+            navMenu.classList.toggle('open', !open);
 
-
-    <script src="script.js"></script>
+            // toggle burger icon
+            burger.querySelector('i').classList.toggle('bx-menu');
+            burger.querySelector('i').classList.toggle('bx-x');
+        });
+    </script>
 </body>
 </html>
